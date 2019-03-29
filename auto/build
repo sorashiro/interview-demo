@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# jar -cvf hello.war index.jsp
+cd $(dirname $0)/..
+# docker run --rm -ti java:8-jre-alpine jar -cvf hello.war index.jsp
+docker build -t sorashiro/demo:1 .
+
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+docker push sorashiro/demo:1
