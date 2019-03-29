@@ -1,11 +1,11 @@
 node {
     stage('Test') {
-        sh './auto/test'
+        sh 'pwd'
     }
     stage('Build') {
-        sh './auto/build'
+        sh 'ls'
     }
     stage('Deploy') {
-        sh './auto/deploy'
+        sh 'bash auto/test'
     }
 }
